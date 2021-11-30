@@ -101,9 +101,7 @@ Firstly we give 3 parameters the API Key, the question which is given by the use
 
 Then we run the model and if the API key is not "JLL_Team" we call an error otherwise we use it and get a certainty score for each answer.
 
-We take the highest score and return the answer linked to this score.
-
-<img src="images/SsAPIAnswer.png" alt="Screen">
+<img src="images/SsAPIAnswer2.png" alt="Screen">
 
 ### Extension Explanation
 
