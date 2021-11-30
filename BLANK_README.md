@@ -14,8 +14,6 @@
     <br />
     <a href="https://github.com/esnaultloic/ProjectCloudComputing"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/esnaultloic/ProjectCloudComputing">View Demo</a>
   </p>
 </div>
 
@@ -52,9 +50,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="images/SsCloudComputing.png" alt="Screen" width="400" height="500">
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+The project consists in creating a firefox and chrome extension to guess answers to question using informations on a wikipedia page.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -73,93 +71,64 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+To install and run this extension locally you have to download the files in the repository.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Use this API Key "JLL_Team"
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/esnaultloic/ProjectCloudComputing.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
+3. Enter your API URL in `popup.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   const url = `https://myimage-67y5rgdn7q-ew.a.run.app?${query}`;
    ```
-
+4. Enter your API KEY in `popup.js`
+   ```js
+   const params = new URLSearchParams({ api_key: "JLL_Team", question: question, context: context });
+   ```****
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- Code explanation -->
+## API explanation
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+For the API we developed a Flask code to use an online model called roberta-base-squad2.
+Firstly we give 3 parameters the API Key, the question which is given by the user and the context which is the list of each paragraph from the wikipedia page.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="images/SsAPIParameters.png" alt="Screen">
 
+Then we run the model and if the API key is not "JLL_Team" we call an error otherwise we use it and get a certainty score for each answer.
+
+We take the highest score and return the answer linked to this score.
+
+<img src="images/SsAPIAnswer.png" alt="Screen">
+## Extension explanation
+
+The first part of the extension is to get the Url which is obtained here.
+<img src="images/SsGetUrl.png" alt="Screen">
+
+The second part is to get the question from the user.
+
+<img src="images/SsQuestion.png" alt="Screen">
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+The third part is to get the data from the wikipedia page.
+<img src="images/SsGetData.png" alt="Screen">
+After that we clean the data.
+<img src="images/SsCleanData.png" alt="Screen">
+Then we call the API to make it learn the content of the page it takes each pargraphe one by one and execute the deep learning model with the question.
+<img src="images/SsCallAPI.png" alt="Screen">
+The model gives a json with the answer to the question and a certainty score to let us know what's the precision on this question.
+<img src="images/SsGetAnswer.png" alt="Screen">
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - email@email_client.com
 
 Project Link: [https://github.com/esnaultloic/ProjectCloudComputing](https://github.com/esnaultloic/ProjectCloudComputing)
 
