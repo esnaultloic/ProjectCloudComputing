@@ -10,7 +10,7 @@
 <h3 align="center">Wikipedia guesser</h3>
 
   <p align="center">
-    project_description
+    Guessing answers using wikipedia pages
     <br />
     <a href="https://github.com/esnaultloic/ProjectCloudComputing"><strong>Explore the docs</strong></a>
     <br />
