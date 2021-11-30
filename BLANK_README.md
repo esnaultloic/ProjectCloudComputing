@@ -12,7 +12,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/esnaultloic/ProjectCloudComputing"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/esnaultloic/ProjectCloudComputing"><strong>Explore the docs</strong></a>
     <br />
   </p>
 </div>
@@ -32,16 +32,14 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#api-explanation">API explanation</a></li>
+    <li><a href="#extension-explanation">Extension explanation</a></li>
+    <li><a href="#api-creation">API Creation</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    
   </ol>
 </details>
 
@@ -61,12 +59,12 @@ The project consists in creating a firefox and chrome extension to guess answers
 ### Built With
 
 * JavaScript
-* Gcloud
+* Google cloud
 * Docker
+* Python
+* Flask
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -90,10 +88,8 @@ To install and run this extension locally you have to download the files in the 
    ```****
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- Code explanation -->
-## API explanation
+<!-- CODE EXPLANATION -->
+## Api Explanation
 
 For the API we developed a Flask code to use an online model called roberta-base-squad2.
 Firstly we give 3 parameters the API Key, the question which is given by the user and the context which is the list of each paragraph from the wikipedia page.
@@ -105,7 +101,8 @@ Then we run the model and if the API key is not "JLL_Team" we call an error othe
 We take the highest score and return the answer linked to this score.
 
 <img src="images/SsAPIAnswer.png" alt="Screen">
-## Extension explanation
+
+### Extension Explanation
 
 The first part of the extension is to get the Url which is obtained here.
 <img src="images/SsGetUrl.png" alt="Screen">
@@ -125,16 +122,24 @@ The model gives a json with the answer to the question and a certainty score to 
 
 
 
+<!-- API CREATION -->
+## Api Creation
+From here the API is usable, the fifth part is needed only if you want to create the API by yourself.
+To put the API online we use google cloud and Docker. 
+In the dockerfile we precise the python version and the port that will be used on google cloud. We give the packages to be installed given in requirements.txt.
+
+<img src="images/SsDocker.png" alt="Screen">
+
+<img src="images/SsRequirements.png" alt="Screen">
+
+We need to put the API on google cloud now using gcloud build :
+<img src="images/SsGcloudBuild.png" alt="Screen">
+<img src="images/SsGcloudBuilded.png" alt="Screen">
 <!-- CONTACT -->
 ## Contact
 
-Your Name - email@email_client.com
+Your names - delagesjul@cy-tech.fr esnaultloi@cy-tech.fr popalouis@cy-tech.fr
 
 Project Link: [https://github.com/esnaultloic/ProjectCloudComputing](https://github.com/esnaultloic/ProjectCloudComputing)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
