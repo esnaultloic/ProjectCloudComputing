@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/SsCloudComputing.png" alt="Screen" width="400" height="500">
+<img src="images/SsExample.png" alt="Screen">
 
 The project consists in creating a firefox and chrome extension to guess answers to question using informations on a wikipedia page.
 First the extension scraps the content of a wikipedia page.
