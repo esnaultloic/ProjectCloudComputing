@@ -85,7 +85,7 @@ To install and run this extension locally you have to download the files in the 
 4. Enter your API KEY in `popup.js`
    ```js
    const params = new URLSearchParams({ api_key: "JLL_Team", question: question, context: context });
-   ```****
+   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CODE EXPLANATION -->
