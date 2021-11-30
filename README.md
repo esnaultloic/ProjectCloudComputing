@@ -114,12 +114,19 @@ The second part is to get the question from the user.
 
 <img src="images/SsQuestion.png" alt="Screen">
 <p align="right">(<a href="#top">back to top</a>)</p>
-The third part is to get the data from the wikipedia page.
-<img src="images/SsGetData.png" alt="Screen">
+
 After that we clean the data.
 <img src="images/SsCleanData.png" alt="Screen">
-Then we call the API to make it learn the content of the page it takes each pargraphe one by one and execute the deep learning model with the question.
+Then we create different url to call the API only once.
 <img src="images/SsCallAPI.png" alt="Screen">
+We call the content_script code which makes the interaction between the webpage and the extension.
+
+<img src="images/SsContentscript.png" alt="Screen">
+
+It creates a message with scrapped data.
+<img src="images/SsContentscript2.png" alt="Screen">
+The third part is to get the data from the message created in content_script.js.
+<img src="images/SsGetData.png" alt="Screen">
 The model gives a json with the answer to the question and a certainty score to let us know what's the precision on this question.
 <img src="images/SsGetAnswer.png" alt="Screen">
 
