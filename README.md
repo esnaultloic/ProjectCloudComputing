@@ -51,7 +51,9 @@
 <img src="images/SsCloudComputing.png" alt="Screen" width="400" height="500">
 
 The project consists in creating a firefox and chrome extension to guess answers to question using informations on a wikipedia page.
-
+First the extension scraps the content of a wikipedia page.
+Then it runs the deep learning model using the question given by the user.
+The API gives a few answers with different certainty scores and we pick the highest score to put in the answer part of the extension.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -70,6 +72,7 @@ The project consists in creating a firefox and chrome extension to guess answers
 ## Getting Started
 
 To install and run this extension locally you have to download the files in the repository.
+Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)
 
 ### Installation
 
@@ -141,5 +144,7 @@ We need to put the API on google cloud now using gcloud build :
 Your names - delagesjul@cy-tech.fr esnaultloi@cy-tech.fr popalouis@cy-tech.fr
 
 Project Link: [https://github.com/esnaultloic/ProjectCloudComputing](https://github.com/esnaultloic/ProjectCloudComputing)
+
+Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
