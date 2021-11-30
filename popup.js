@@ -48,19 +48,20 @@ async function goToPage(url, url_index, tab_id) {
                         question: str,
                         title: JSON.parse(message).title,
                         h1: JSON.parse(message).h1,
-                        url: url
+                        url: url,
                     };
 
                     // Clean les valeurs du json
                     var array1 = json_data.h1;
-                    var array_length = array1.length - 2;
+                    var array_length = array1.length - 5;
                     var urls = [];
 
                     for (const element of array1) {
-                        console.log(element);
+                        
                         element[0] = element[0].replace(/\n/g, '');
                         element[0] = element[0].replace(/â€“/g, '-');
                         element[0] = element[0].replace(/ *\[[^\]]*]/g, '');
+                        console.log(element);
                     }
                     // Mettre code julien pour appeler l'api
 
@@ -71,26 +72,32 @@ async function goToPage(url, url_index, tab_id) {
                         const url = `https://myimage-67y5rgdn7q-ew.a.run.app?${query}`;
                         urls.push(url)
                     }
+                    console.log(urls)
 
-                    fetch("https://myimage-67y5rgdn7q-ew.a.run.app?api_key=JLL_Team&question=What+battle+%3F&context=The+Battle+of+Montgisard+was+fought+between+the+Kingdom+of+Jerusalem+and+the+Ayyubids+on+25+November+1177+at+Montgisard%2C+in+the+Levant+between+Ramla+and+Yibna.+The+16-year-old+King+Baldwin+IV%2C+seriously+afflicted+by+leprosy%2C+led+an+outnumbered+Christian+force+against+Saladin%27s+troops+in+what+became+one+of+the+most+notable+engagements+of+the+Middle+Ages.+The+Muslim+army+was+quickly+routed+and+pursued+for+twelve+miles.+Saladin+fled+back+to+Cairo%2C+reaching+the+city+on+8+December%2C+with+only+a+tenth+of+his+army.+Muslim+historians+considered+Saladin%27s+defeat+to+be+so+severe+that+it+was+only+redeemed+by+his+victory+ten+years+later+at+the+Battle+of+Hattin+in+1187%2C+although+Saladin+defeated+Baldwin+in+the+Battle+of+Marj+Ayyun+in+1179%2C+only+to+be+defeated+by+Baldwin+again+at+the+Battle+of+Belvoir+Castle+in+1182.")
-                        .then((response) => {
-                            if (response.ok) {
-                                return response.json();
-                            } else {
-                                throw new Error("NETWORK RESPONSE ERROR");
+                    const sendGetRequest = async () => {
+                        try {
+                            const list_answer = []
+                            for (let url of urls) {
+                                const response = await fetch(url);
+                                const json = await response.json();
+                                console.log(json);
+                                list_answer.push(json)
                             }
-                        })
-                        .then(data => {
-                            console.log(data)
-                            displayAnswer(data);
-                        })
-                        .catch((error) => console.error("FETCH ERROR:", error));
 
-                    function displayAnswer(data) {
-                        const answer = data.answer;
-                        const element = document.getElementById("answer");
-                        element.innerHTML = answer;
+                            var max_score = Math.max(...list_answer.map(e => e.score));
+                            var obj = list_answer.find(score => score.score === max_score);
+                            const answer = obj.answer;
+                            console.log(answer);
+                            const element = document.getElementById("answer");
+                            element.innerHTML = answer;
+                        }
+                        catch (err) {
+                            // Handle Error Here
+                            console.error(err);
+                        }
                     }
+
+                    sendGetRequest()
         
                     let blob = new Blob([JSON.stringify(json_data)], { type: "application/json;charset=utf-8" });
                     let objectURL = URL.createObjectURL(blob);
