@@ -134,8 +134,8 @@ The third part is to get the data from the message created in content_script.js.
 
 <img src="images/SsGetData.png" alt="Screen">
 
-The model gives a json with the answer to the question and a certainty score to let us know what's the precision on this question.
-<img src="images/SsGetAnswer.png" alt="Screen">
+We loop through each url to get all the answers and we select the one with the highest score.
+<img src="images/SsGetAnswer2.png" alt="Screen">
 
 
 
