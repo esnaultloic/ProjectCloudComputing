@@ -53,7 +53,7 @@
 The project consists in creating a firefox and chrome extension to guess answers to question using informations on a wikipedia page.
 First the extension scraps the content of a wikipedia page.
 Then it runs the deep learning model using the question given by the user.
-The API gives a few answers with different certainty scores and we pick the highest score to put in the answer part of the extension.
+The API returns the answer with the highest certainty score among the different paragraphs of the wikipedia page.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
