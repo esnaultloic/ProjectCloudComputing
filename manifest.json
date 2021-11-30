@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Seize Text",
+    "version": "1.0",
+    "description": "Enter question",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "downloads",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "background_popup.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "content_scripts_popup.js"
+            ]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "icon.jpg",
+        "default_title": "Question Time",
+        "default_popup": "popup.html"
+    }
+}
