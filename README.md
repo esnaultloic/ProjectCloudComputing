@@ -77,7 +77,7 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repository.
    ```sh
    git clone https://github.com/esnaultloic/ProjectCloudComputing.git
    ```
