@@ -176,7 +176,7 @@ Here is the estimated cost with these settings :
 <!-- CONTACT -->
 ## Contact
 
-Your names - delagesjul@cy-tech.fr esnaultloi@cy-tech.fr popalouis@cy-tech.fr
+Contacts - delagesjul@cy-tech.fr esnaultloi@cy-tech.fr popalouis@cy-tech.fr
 
 Project Link: [https://github.com/esnaultloic/ProjectCloudComputing](https://github.com/esnaultloic/ProjectCloudComputing)
 
