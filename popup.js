@@ -64,40 +64,32 @@ async function goToPage(url, url_index, tab_id) {
                         console.log(element);
                     }
                     // Mettre code julien pour appeler l'api
-
-                    for (let step = 0; step < array_length; step++) {
-                        var context = array1[step][0].toString()
-                        const params = new URLSearchParams({ api_key: "JLL_Team", question: question, context: context });
-                        const query = params.toString(); // Output: foo=1&bar=2
-                        const url = `https://myimage-67y5rgdn7q-ew.a.run.app?${query}`;
-                        urls.push(url)
-                    }
-                    console.log(urls)
-
-                    const sendGetRequest = async () => {
+                    const asyncPostCall = async () => {
                         try {
-                            const list_answer = []
-                            for (let url of urls) {
-                                const response = await fetch(url);
-                                const json = await response.json();
-                                console.log(json);
-                                list_answer.push(json)
-                            }
-
-                            var max_score = Math.max(...list_answer.map(e => e.score));
-                            var obj = list_answer.find(score => score.score === max_score);
-                            const answer = obj.answer;
-                            console.log(answer);
+                            const response = await fetch('https://myimage2-67y5rgdn7q-ew.a.run.app', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    // your expected POST request payload goes here
+                                    question: json_data.question,
+                                    h1: json_data.h1
+                                })
+                            });
+                            const data = await response.json();
+                            // enter you logic when the fetch is successful
+                            console.log(data);
                             const element = document.getElementById("answer");
-                            element.innerHTML = answer;
-                        }
-                        catch (err) {
-                            // Handle Error Here
-                            console.error(err);
+                            element.innerHTML = data.answer;
+                        } catch (error) {
+                            // enter your logic for when there is an error (ex. error toast)
+
+                            console.log(error)
                         }
                     }
 
-                    sendGetRequest()
+                    asyncPostCall()
         
                     let blob = new Blob([JSON.stringify(json_data)], { type: "application/json;charset=utf-8" });
                     let objectURL = URL.createObjectURL(blob);
