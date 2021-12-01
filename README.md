@@ -147,7 +147,7 @@ The third part is to get the data from the message created in content_script.js.
 
 <img src="images/SsGetData.png" alt="Screen">
 
-we call the api and we display the result à la place de We loop through each url to get all the answers and we select the one with the highest score.
+We call the api and we display the result.
 <img src="images/SsResponse.png" alt="Screen">
 
 
