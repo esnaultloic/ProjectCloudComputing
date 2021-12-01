@@ -38,6 +38,7 @@
     <li><a href="#api-explanation">API explanation</a></li>
     <li><a href="#extension-explanation">Extension explanation</a></li>
     <li><a href="#api-creation">API Creation</a></li>
+    <li><a href="#cost-estimation">Cost estimation</a></li>
     <li><a href="#contact">Contact</a></li>
     
   </ol>
@@ -150,6 +151,14 @@ In the dockerfile we precise the python version and the port that will be used o
 We need to put the API on google cloud now using gcloud build :
 <img src="images/SsGcloudBuild.png" alt="Screen">
 <img src="images/SsGcloudBuilded.png" alt="Screen">
+
+<!-- COST ESTIMATION -->
+## Cost estimation
+Here is the estimated cost with these settings :
+
+<img src="images/Settings.png" alt="Screen">
+<img src="images/Estimation.png" alt="Screen">
+
 <!-- CONTACT -->
 ## Contact
 
