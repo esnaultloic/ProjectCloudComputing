@@ -95,12 +95,11 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
 <!-- CODE EXPLANATION -->
 ## Api Explanation
 
-For the API we developed a Flask code to use an online model called roberta-base-squad2.
-Firstly we give 3 parameters the API Key, the question which is given by the user and the context which is the list of each paragraph from the wikipedia page.
+We developed the python API using Flask by implementing an online model called roberta-base-squad2. Firstly with a POST method we select the question and the paragraphs from the json file we created thanks to the scraping of the web page
 
 <img src="images/SsAPIParameters2.png" alt="Screen">
 
-Then we run the model and if the API key is not "JLL_Team" we call an error otherwise we use it and get a certainty score for each answer.
+If the question or the context is empty we return an error code. Else, we load the model and loop over the paragraphs. We returned the answer from paragraph that presents the highest certainty score looking at the question. The response returned is in a json format with the index of the paragraph in the page, the answer of the question, the certainty score and the starting and ending index of the answer in the paragraph.
 
 <img src="images/SsAPIAnswer3.png" alt="Screen">
 
