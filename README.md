@@ -83,7 +83,27 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
    ```
 2. Enter your API URL in `popup.js`
    ```js
-   const url = `https://myimage-67y5rgdn7q-ew.a.run.app?${query}`;
+   const response = await fetch('https://myimage2-67y5rgdn7q-ew.a.run.app', {
+
+                                method: 'POST',
+
+                                headers: {
+
+                                    'Content-Type': 'application/json'
+
+                                },
+
+                                body: JSON.stringify({
+
+                                    // your expected POST request payload goes here
+
+                                    question: json_data.question,
+
+                                    h1: json_data.h1
+
+                                })
+
+                            });
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
