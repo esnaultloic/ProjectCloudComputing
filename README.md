@@ -98,11 +98,11 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
 For the API we developed a Flask code to use an online model called roberta-base-squad2.
 Firstly we give 3 parameters the API Key, the question which is given by the user and the context which is the list of each paragraph from the wikipedia page.
 
-<img src="images/SsAPIParameters.png" alt="Screen">
+<img src="images/SsAPIParameters2.png" alt="Screen">
 
 Then we run the model and if the API key is not "JLL_Team" we call an error otherwise we use it and get a certainty score for each answer.
 
-<img src="images/SsAPIAnswer2.png" alt="Screen">
+<img src="images/SsAPIAnswer3.png" alt="Screen">
 
 ### Extension Explanation
 
