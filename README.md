@@ -81,7 +81,7 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
    ```sh
    git clone https://github.com/esnaultloic/ProjectCloudComputing.git
    ```
-2. Enter your API URL in `popup.js`
+2. Enter your API URL in `popup.js` h1 is a list of paragraphs.
    ```js
    const response = await fetch('https://myimage2-67y5rgdn7q-ew.a.run.app', {
 
