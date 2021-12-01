@@ -77,18 +77,13 @@ Model Link: [https://huggingface.co/deepset/roberta-base-squad2](https://hugging
 
 ### Installation
 
-1. Use this API Key "JLL_Team"
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/esnaultloic/ProjectCloudComputing.git
    ```
-3. Enter your API URL in `popup.js`
+2. Enter your API URL in `popup.js`
    ```js
    const url = `https://myimage-67y5rgdn7q-ew.a.run.app?${query}`;
-   ```
-4. Enter your API KEY in `popup.js`
-   ```js
-   const params = new URLSearchParams({ api_key: "JLL_Team", question: question, context: context });
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
